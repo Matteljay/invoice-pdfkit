@@ -96,11 +96,11 @@ If you clone this repo, `npm run tsstart` will regenerate the example files.
 - QR-code support for both legacy bank transfers and crypto payments, especially useful for the long address payload of bitcoin lightning network invoices.
 - The memo field is used for some cryptocurrencies, payment reference or a note is used for bank transfers.
 - Short-form human readable crypto addresses such as Ethereum's ENS can be specified in either the _company_ or _payment_ object at the same location as the bank account number or IBAN/SEPA number.
-- A list of all supported fields can be found in the [types/](types/) folder. Typescript support is optional.
+- A list of all supported fields can be found in the [types/](types/) folder. TypeScript support is optional.
 
 ### Donation
 
-This software is free as in transparent, open source and can be used per MIT license. Not free as in zero cost, 1000 lines of code didn't grow on a tree. Advertisements aren't integrated either. Buy the writer a coffee or whatever you consider reasonible if you decide to use it in the current or modified state. Further details in [CONTACT.md](CONTACT.md).
+This software is free as in transparent, open source and can be used per MIT license. Not free as in zero cost, 1000 lines of code didn't grow on a tree. Advertisements aren't integrated either. Buy the writer a coffee or whatever you consider reasonable if you decide to use it in the current or modified state. Further details in [CONTACT.md](CONTACT.md).
 
 ### Translation
 
