@@ -10,8 +10,8 @@
 
 ## Table of contents
 
-- [About](#About)
-- [Example](#Example)
+- [About](#about)
+- [Example](#example)
 - [Features](#features)
 - [Donation](#donation)
 - [Translation](#translation)
