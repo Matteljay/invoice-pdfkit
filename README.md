@@ -80,6 +80,7 @@ const pdfData = tradePDF.invoice({
   },
 });
 fs.writeFileSync("simple.pdf", pdfData);
+console.log("Generated simple.pdf");
 ```
 
 More complete examples with PDF output are available in [test/](test/).

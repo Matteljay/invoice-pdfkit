@@ -233,6 +233,7 @@ const pdfData = tradePDF.invoice({
   },
 });
 fs.writeFileSync(folder + "simple.pdf", pdfData);
+console.log("Generated simple.pdf")
 */
 
 /* EOF */
