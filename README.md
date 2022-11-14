@@ -24,14 +24,14 @@ _invoice-pdfkit_ attempts to standardize and internationalize the creation of co
 ### Example
 
 Generated minimal example pdf:
-![Simple PDF](screenshots/simple-pdf.png)
+![Minimal PDF](screenshots/minimal-pdf.png)
 
 Install this module in your project folder:
 `npm i invoice-pdfkit`
 
 Minimal code example:
 
-```
+```js
 const tradePDF = require("invoice-pdfkit");
 const fs = require("fs");
 
@@ -43,6 +43,7 @@ tradePDF.init({
     email: "your@buzz.com",
     web: "https://that-buzz.org",
   },
+  currency: "USD",
 });
 
 const pdfData = tradePDF.invoice({

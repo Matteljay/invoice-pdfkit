@@ -196,6 +196,7 @@ tradePDF.init({
     email: "your@buzz.com",
     web: "https://that-buzz.org",
   },
+  currency: "USD",
 });
 
 const pdfData = tradePDF.invoice({
