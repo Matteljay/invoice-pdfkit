@@ -19,17 +19,14 @@
 
 ## About
 
-_invoice-pdfkit_ attempts to standardize and internationalize the creation of common business pdf documents. Retail articles and hourly job declarations often require documents such as: invoice, receipt, return checklist and refund proofs. Those can now be generated from three simple JavaScript objects: _company_, _order_ and _payment_, all very flexible with optional fields. Traditional bank transfer and cryptocurrency transactions on all layers are supported. Total amounts and optional tax compliance such as VAT and sales taxes are automatically calculated from your list of prices.
+_invoice-pdfkit_ attempts to standardize and internationalize the creation of common business pdf documents. Retail articles and hourly job declarations often require documents such as: invoice, packing slip, receipt, return checklist and refund proofs. Those can now be generated from three simple JavaScript objects: _company_, _order_ and _payment_, all very flexible with optional fields. Traditional bank transfer and cryptocurrency transactions on all layers are supported. Total amounts and optional tax compliance such as VAT and sales taxes are automatically calculated from your list of prices.
 
-### Example
+## Example
 
-Generated minimal example pdf:
-![Minimal PDF](screenshots/minimal-pdf.png)
+![Invoice example](screenshots/invoice-sample.jpg)
 
-Install this module in your project folder:
+Minimal code usage, install this module in your project folder:
 `npm i invoice-pdfkit`
-
-Minimal code example:
 
 ```js
 const tradePDF = require("invoice-pdfkit");
@@ -86,7 +83,7 @@ console.log("Generated simple.pdf");
 More complete examples with PDF output are available in [test/](test/).
 If you clone this repo, `npm run tsstart` will regenerate the example files.
 
-### Features
+## Features
 
 - Easy to translate for your language, see the [locales/](locales/) folder.
 - Can be used to declare working hours as well as a list of articles and their prices.
@@ -96,13 +93,13 @@ If you clone this repo, `npm run tsstart` will regenerate the example files.
 - QR-code support for both legacy bank transfers and crypto payments, especially useful for the long address payload of bitcoin lightning network invoices.
 - The memo field is used for some cryptocurrencies, payment reference or a note is used for bank transfers.
 - Short-form human readable crypto addresses such as Ethereum's ENS can be specified in either the _company_ or _payment_ object at the same location as the bank account number or IBAN/SEPA number.
-- A list of all supported fields can be found in the [types/](types/) folder. TypeScript support is optional.
+- A list of all supported fields can be found in [types/main.d.ts](types/main.d.ts). TypeScript support is optional.
 
-### Donation
+## Donation
 
 This software is free as in transparent, open source and can be used per MIT license. Not free as in zero cost, 1000 lines of code didn't grow on a tree. Advertisements aren't integrated either. Buy the writer a coffee or whatever you consider reasonable if you decide to use it in the current or modified state. Further details in [CONTACT.md](CONTACT.md).
 
-### Translation
+## Translation
 
 Currently supported languages:
 
@@ -112,8 +109,8 @@ Currently supported languages:
 
 To add your language, go to the [locales/](locales/) folder and create a folder specific to your language with a _translation.json_ inside. After forking and editing, feel free to create a Git pull request. Don't forget to add your language to this [README.md](README.md) as well.
 
-### Notes
+## Notes
 
-Some fields may be missing for your region. For example: most dutch entrepreneurs are forced to register a "KvK" number. Simply add that text in the `company.registration` field: **KvK 0441.956.713**. Australian banks may require a "BSB" number for payments. Simply add that text to `payment.bankID` or `company.bankID`: **BSB 033-548**. If you still feel some essential fields are missing, a Git pull request is welcome.
+Some fields may be missing for your region. For example: most dutch entrepreneurs are forced to register a "KvK" number. Simply add that text in the `company.registration` field: "KvK 0441.956.713". Australian banks may require a "BSB" number for payments. Simply add that text to `payment.bankID` or `company.bankID`: "BSB 033-548". All supported fields can be found here: [types/main.d.ts](types/main.d.ts). If you still feel some essential fields are missing, a Git pull request is welcome.
 
-The source code includes a reasonibly advanced flex-table implementation for pdfkit, see the module [src/flex-table.js](src/flex-table.js) this may be used in your own projects.
+The source code includes a reasonably advanced flex-table implementation for pdfkit, see the module [src/flex-table.js](src/flex-table.js) this may be used in your own projects.

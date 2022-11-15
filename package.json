@@ -36,7 +36,11 @@
     "receipt",
     "packing",
     "return",
-    "refund"
+    "refund",
+    "bitcoin",
+    "lighting",
+    "crypto",
+    "payment"
   ],
   "bugs": {
     "url": "https://github.com/Matteljay/invoice-pdfkit/issues"
