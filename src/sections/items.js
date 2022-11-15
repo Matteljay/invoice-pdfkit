@@ -1,6 +1,5 @@
 const { t, config, showMoney, docH, dt } = require("../globals");
 const drawFlexTable = require("../flex-table");
-const { isTemplateMiddle } = require("typescript");
 
 const calcItems = (order) => {
   if (!order.items.length) return {};

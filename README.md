@@ -37,7 +37,7 @@ const fs = require("fs");
 
 console.log("Language options: " + tradePDF.getLanguages());
 tradePDF.init({
-  logo: fs.readFileSync("test/logo.jpg"),
+  logo: fs.existsSync("logo.jpg") ? fs.readFileSync("logo.jpg") : undefined,
   company: {
     company: "Your Company Name",
     email: "your@buzz.com",
