@@ -44,6 +44,7 @@ const init = (settings) => {
   config.initialized = true;
 };
 
+const quote = (...args) => generate((docType = dt.QUOTE), ...args);
 const invoice = (...args) => generate((docType = dt.INVOICE), ...args);
 const packing = (...args) => generate((docType = dt.PACKING), ...args);
 const ret = (...args) => generate((docType = dt.RETURN), ...args);
@@ -86,7 +87,7 @@ const generate = (docType, order, payment) => {
     } else {
       shipPos = Destination(doc, company, t("ship_to"), false);
     }
-  } else if (config.docType === dt.REFUND) {
+  } else if ([dt.QUOTE, dt.REFUND].includes(config.docType)) {
     billPos = Destination(doc, order.bill, t("bill_to"), false);
   } else {
     billPos = Destination(doc, order.bill, t("bill_to"), false);
@@ -110,19 +111,17 @@ const generate = (docType, order, payment) => {
   const noteWidth =
     roomTotals > docH.printWidth / 2 ? roomTotals : docH.printWidth;
   Note(doc, order, noteWidth);
-  if (![dt.PACKING, dt.RETURN].includes(config.docType)) {
-    const payQRpos = PayQR(doc, payment);
-    const details = getDetails(doc, payment);
-    if (details.table.length) {
-      const isRoomDetails = details.width + docH.margin < docH.printWidth / 2;
-      if (!isRoomDetails) docH.jumpBelow(totalsPos, payQRpos);
-    }
-    const payDetailsPos = PayDetails(doc, details);
-    docH.jumpBelow(totalsPos, payDetailsPos);
-    //
-    // Section
-    Terms(doc, order);
+  const payQRpos = PayQR(doc, payment);
+  const details = getDetails(doc, payment);
+  if (details.table.length) {
+    const isRoomDetails = details.width + docH.margin < docH.printWidth / 2;
+    if (!isRoomDetails) docH.jumpBelow(totalsPos, payQRpos);
   }
+  const payDetailsPos = PayDetails(doc, details);
+  docH.jumpBelow(totalsPos, payQRpos, payDetailsPos);
+  //
+  // Section
+  Terms(doc, order);
   //
   // Section
   doc.page.margins.bottom -= getPageIndicatorHeight(doc);
@@ -134,8 +133,9 @@ const generate = (docType, order, payment) => {
 };
 
 module.exports = {
-  init,
   getLanguages,
+  init,
+  quote,
   invoice,
   packing,
   return: ret,

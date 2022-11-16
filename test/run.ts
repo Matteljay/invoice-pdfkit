@@ -87,17 +87,20 @@ const repeatItems = Array(8).fill(items).flat();
 
 const order: Order = {
   id: "Y4TIX8GX",
+  ref: "V1002",
+  purchase: "5846742",
   date: {
     // JS Date format, milliseconds since 1 January 1970 UTC
     created: 1659372135311,
+    expire: 1655558412147,
     due: 1655118412147,
     paid: 1655118412147,
+    deliver: "Full Moon xD",
     refunded: 1655118412147,
   },
-  paymentID: "Package accepted by Martin",
-  trackingID: "3SXPXA1217058",
-  note: "Some relevant text - ex. Don't drop off at the neighbors",
   clientID: "C345524U",
+  salesRep: "Georgina",
+  note: "Some text examples - Prices are in USD / Protect fragile materials / Don't drop off at the neighbors",
   bill: {
     company: "Super Grip Tires BV",
     name: "Jan van Eihof",
@@ -137,7 +140,7 @@ const payment = {
   //account: "BC1QMAMK7PJU2N2NHL58E8VRWWW6CDRFLHNAQJFY2V",
   //account:
   //  "LNBC20M1PVJLUEZPP5QQQSYQCYQ5RQWZQFQQQSYQCYQ5RQWZQFQQQSYQCYQ5RQWZQFQYPQHP58YJMDAN79S6QQDHDZGYNM4ZWQD5D7XMW5FK98KLYSY043L2AHRQSFPP3QJMP7LWPAGXUN9PYGEXVGPJDC4JDJ85FR9YQ20Q82GPHP2NFLC7JTZRCAZRRA7WWGZXQC8U7754CDLPFRMCCAE92QGZQVZQ2PS8PQQQQQQPQQQQQ9QQQVPEUQAFQXU92D8LR6FVG0R5GV0HEEEQGCRQLNM6JHPHU9Y00RRHY4GRQSZSVPCGPY9QQQQQQGQQQQQ7QQZQJ9N4EVL6MR5AJ9F58ZP6FYJZUP6YWN3X6SK8AKG5V4TGN2Q8G4FHX05WF6JUAXU9760YP46454GPG5MTZGERLZEZQCQVJNHJH8Z3G2QQDHHWKJ",
-  //account: "NL33 ABNA 0383 9284 93",
+  account: "NL33 ABNA 0383 9284 93",
   bankID: "ABNABNL2AXXX",
   taxID: "BE0423798694",
   memo: "3u232",
@@ -145,7 +148,7 @@ const payment = {
   reference: "RF8WHAT9EVAH1",
   note: "Some secondary order reference or other relevant payment info. This could also be a slightly annoyingly long text.",
   mailCompany: "DHL Express International",
-  mailID: "3S482SOME73CODE3",
+  mailID: "3S4111_MAIL_ID",
   //transaction: "Cash payment accepted by Kees",
   transaction:
     "a5d5ad7538fafc841fa7a314a88b1c157b472d34b39dbe56c08dd293a656b9c1",
@@ -170,6 +173,9 @@ tradePDF.init({
 //console.log(pdfData.toString("base64"));
 let pdfData;
 
+pdfData = tradePDF.quote(order, payment);
+fs.writeFileSync(folder + "0_quote.pdf", pdfData);
+
 pdfData = tradePDF.invoice(order, payment);
 fs.writeFileSync(folder + "1_invoice.pdf", pdfData);
 
@@ -182,7 +188,7 @@ fs.writeFileSync(folder + "3_return.pdf", pdfData);
 pdfData = tradePDF.receipt(order, payment);
 fs.writeFileSync(folder + "4_receipt.pdf", pdfData);
 
-pdfData = tradePDF.refund(order);
+pdfData = tradePDF.refund(order, payment);
 fs.writeFileSync(folder + "5_refund.pdf", pdfData);
 
 console.log("Successfully generated pdf(s)");

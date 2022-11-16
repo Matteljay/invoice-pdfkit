@@ -1,4 +1,5 @@
 {
+  "quote": "Quotation",
   "invoice": "Invoice",
   "packing": "Packing Slip",
   "return": "Return Form",
@@ -10,13 +11,15 @@
   "attn": "attn.",
 
   "order_id": "Order #",
-  "order_ref": "Reference",
-  "order_po": "P.O. #",
+  "order_ref": "Reference #",
+  "order_purchase": "P.O. #",
   "order_client": "Client #",
   "order_salesrep": "Sales rep.",
-  "order_created": "Created",
+  "order_created": "Created on",
+  "order_expire": "Expiry date",
   "order_due": "Due date",
   "order_paid": "Paid on",
+  "order_deliver": "Delivery date",
   "order_refunded": "Refunded",
 
   "item_id": "Code",
@@ -51,10 +54,11 @@
   "pay_tax_id": "Tax ID",
   "pay_transaction": "Transaction",
   "mail_company": "Carrier",
-  "mail_id": "Tracking Code",
+  "mail_id": "Tracking code",
 
   "terms": "Terms & Conditions",
   "terms_site": "Full terms and conditions are described at",
-  "terms_due": "Invoice is valid if paid no later than the due date.",
+  "terms_expire": "Quotation is valid until the expiry date.",
+  "terms_due": "Invoice must be paid no later than the due date.",
   "terms_paid": "The requested amount has been paid."
 }

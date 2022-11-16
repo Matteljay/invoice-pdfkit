@@ -1,17 +1,23 @@
 const { t, showDate, docH, config, dt } = require("../globals");
 
 const Order = (doc, order) => {
+  const { docType } = config;
   const details = {
     order_id: order.id,
-    order_ref: order.orderRef,
-    order_po: order.po,
+    order_ref: order.ref,
+    order_purchase: docType === dt.QUOTE ? "" : order.purchase,
     order_client: order.clientID,
     order_salesrep: order.salesRep,
     order_created: showDate(order.date.created),
-    order_due: config.docType === dt.INVOICE ? showDate(order.date.due) : "",
-    order_paid: showDate(order.date.paid),
-    order_refunded:
-      config.docType === dt.REFUND ? showDate(order.date.refunded) : "",
+    order_expire: docType === dt.QUOTE ? showDate(order.date.expire) : "",
+    order_due: docType === dt.INVOICE ? showDate(order.date.due) : "",
+    order_deliver: [dt.INVOICE, dt.RECEIPT].includes(docType)
+      ? showDate(order.date.deliver)
+      : "",
+    order_paid: [dt.RECEIPT, dt.REFUND].includes(docType)
+      ? showDate(order.date.paid)
+      : "",
+    order_refunded: docType === dt.REFUND ? showDate(order.date.refunded) : "",
   };
   const widthColOne = docH.widthOfStrings(
     Object.keys(details).map((k) => (details[k] ? t(k) + ":" : ""))

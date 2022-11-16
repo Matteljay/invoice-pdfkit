@@ -1,6 +1,8 @@
 const { t, config, docH, dt } = require("../globals");
 
 const Terms = (doc, order) => {
+  const { docType } = config;
+  if ([dt.PACKING, dt.RETURN].includes(docType)) return;
   docH.pTextArgs = [doc.page.margins.left];
   if (config.company.termsURL || order.date.due) {
     doc.fontSize(config.fontSize * 0.9);
@@ -11,7 +13,10 @@ const Terms = (doc, order) => {
   }
   if (config.company.termsURL)
     docH.pText(t("terms_site") + " " + config.company.termsURL);
-  if (config.docType === dt.INVOICE) {
+  if (docType === dt.QUOTE) {
+    if (order.date.due) docH.pText(t("terms_expire"));
+    docH.pText(config.company.terms);
+  } else if (docType === dt.INVOICE) {
     if (order.date.due) docH.pText(t("terms_due"));
     docH.pText(config.company.terms);
   } else {

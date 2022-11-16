@@ -1,4 +1,5 @@
 {
+  "quote": "Angebot",
   "invoice": "Rechnung",
   "packing": "Lieferschein",
   "return": "Rücksendeformular",
@@ -9,14 +10,16 @@
   "ship_to": "Lieferungsadresse",
   "attn": "z.Hd",
 
-  "order_id": "Bestellnummer",
+  "order_id": "Ordernummer",
   "order_ref": "Referenz",
-  "order_po": "Postfach",
+  "order_purchase": "Bestellnummer",
   "order_client": "Kundennummer",
-  "order_salesrep": "Vertreter",
+  "order_salesrep": "Ansprechperson",
   "order_created": "Erstellt",
-  "order_due": "Verfallsdatum",
+  "order_expire": "Ablaufdatum",
+  "order_due": "Fälligkeitsdatum",
   "order_paid": "Transaktionsdatum",
+  "order_deliver": "Lieferdatum",
   "order_refunded": "Rückzahlung",
 
   "item_id": "Code",
@@ -55,6 +58,7 @@
 
   "terms": "Geschäftsbedingungen",
   "terms_site": "Vollständigen Geschäftsbedingungen sind beschrieben auf",
-  "terms_due": "Rechnung ist gültig, wenn sie spätestens am Verfallsdatum bezahlt wird.",
+  "term_expire": "Angebot ist bis einschließlich Ablaufdatum gültig.",
+  "terms_due": "Rechnung muss spätestens am Fälligkeitsdatum bezahlt werden.",
   "terms_paid": "Der angeforderte Betrag wurde bezahlt."
 }

@@ -28,19 +28,21 @@
   },
   "keywords": [
     "business",
-    "pdf",
-    "file",
-    "document",
+    "payment",
     "generate",
     "invoice",
+    "quote",
+    "quotation",
     "receipt",
     "packing",
     "return",
     "refund",
-    "bitcoin",
-    "lighting",
     "crypto",
-    "payment"
+    "bitcoin",
+    "lightning",
+    "pdf",
+    "document",
+    "file"
   ],
   "bugs": {
     "url": "https://github.com/Matteljay/invoice-pdfkit/issues"

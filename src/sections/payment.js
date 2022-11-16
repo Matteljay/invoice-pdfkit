@@ -1,6 +1,8 @@
 const { t, config, docH, dt } = require("../globals");
 
 const PayQR = (doc, payment) => {
+  if ([dt.QUOTE, dt.PACKING, dt.RETURN].includes(config.docType))
+    return docH.returnPos();
   if (!payment?.qr) return docH.returnPos();
   const sqFit = docH.printWidth / 6;
   const width = docH.printWidth / 2 - 2 * docH.margin;
@@ -21,6 +23,8 @@ const PayQR = (doc, payment) => {
 
 const getDetails = (doc, payment) => {
   const table = [];
+  if ([dt.QUOTE, dt.PACKING, dt.RETURN].includes(config.docType))
+    return { table, width: 0 };
   if (!payment) return { table, width: 0 };
   const details = {
     pay_name: "name",
@@ -33,8 +37,11 @@ const getDetails = (doc, payment) => {
   };
   if (config.docType === dt.INVOICE) {
     details.mail_company = "mailCompany";
+  } else if (config.docType === dt.RECEIPT) {
+    details.mail_company = "mailCompany";
     details.mail_id = "mailID";
-  } else {
+  }
+  if ([dt.RECEIPT, dt.REFUND].includes(config.docType)) {
     details.pay_transaction = "transaction";
   }
   const method =

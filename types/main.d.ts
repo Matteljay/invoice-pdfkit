@@ -36,13 +36,15 @@ type CompanyInfo = Identity & {
   ship?: Identity;
 };
 
+type FlexDate = Date | number | string;
+
 type OrderDate = {
-  created?: number;
-  add?: number;
-  edit?: number;
-  due?: number;
-  paid?: number;
-  refunded?: number;
+  created?: FlexDate;
+  expire?: FlexDate;
+  due?: FlexDate;
+  paid?: FlexDate;
+  deliver?: FlexDate;
+  refunded?: FlexDate;
 };
 
 type OrderTotal = {
@@ -68,11 +70,12 @@ type OrderItem = {
 
 type Order = {
   id?: string;
+  ref?: string;
+  purchase?: string;
   date?: OrderDate;
-  paymentID?: string;
-  trackingID?: string;
-  note?: string;
   clientID?: string;
+  salesRep?: string;
+  note?: string;
   bill?: Identity;
   ship?: Identity;
   items?: OrderItem[];
@@ -89,14 +92,24 @@ type Payment = {
 };
 
 declare module "TradePDF" {
-  function init(settings?: Settings): void;
   function getLanguages(): string[] | Buffer[] | fs.Dirent[];
+  function init(settings?: Settings): void;
+  function quote(order?: Order): string | Buffer;
   function invoice(order?: Order, payment?: Payment): string | Buffer;
   function packing(order?: Order): string | Buffer;
   function ret(order?: Order): string | Buffer;
   function receipt(order?: Order, payment?: Payment): string | Buffer;
   function refund(order?: Order, payment?: Payment): string | Buffer;
-  export = { init, invoice, packing, return: ret, receipt, refund };
+  export = {
+    getLanguages,
+    init,
+    quote,
+    invoice,
+    packing,
+    return: ret,
+    receipt,
+    refund,
+  };
 }
 
 // EOF

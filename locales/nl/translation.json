@@ -1,4 +1,5 @@
 {
+  "quote": "Offerte",
   "invoice": "Factuur",
   "packing": "Pakbon",
   "return": "Retourbon",
@@ -9,14 +10,16 @@
   "ship_to": "Bezorgadres",
   "attn": "tav.",
 
-  "order_id": "Bestelnr.",
+  "order_id": "Ordernummer",
   "order_ref": "Kenmerk",
-  "order_po": "Postbus",
+  "order_purchase": "Bestelnummer",
   "order_client": "Klantnummer",
-  "order_salesrep": "Vertegenwoordiger",
+  "order_salesrep": "Contactpersoon",
   "order_created": "Aangemaakt",
+  "order_expire": "Verloopdatum",
   "order_due": "Vervaldatum",
   "order_paid": "Transactiedatum",
+  "order_deliver": "Leverdatum",
   "order_refunded": "Restitutiedatum",
 
   "item_id": "Code",
@@ -55,6 +58,7 @@
 
   "terms": "Algemene voorwaarden",
   "terms_site": "Volledige algemene voorwaarden worden beschreven op",
-  "terms_due": "Factuur is geldig indien betaald uiterlijk op de vervaldatum.",
+  "terms_expire": "Offerte is geldig tot en met de verloopdatum.",
+  "terms_due": "Factuur dient uiterlijk betaald te worden op de vervaldatum.",
   "terms_paid": "Het gevraagde bedrag is voldaan."
 }

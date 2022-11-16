@@ -4,7 +4,8 @@ const Title = (doc) => {
   doc.moveDown(1);
   doc.fontSize(config.fontSize * 3);
   let text;
-  if (config.docType === dt.PACKING) text = t("packing");
+  if (config.docType === dt.QUOTE) text = t("quote");
+  else if (config.docType === dt.PACKING) text = t("packing");
   else if (config.docType === dt.RETURN) text = t("return");
   else if (config.docType === dt.RECEIPT) text = t("receipt");
   else if (config.docType === dt.REFUND) text = t("refund");

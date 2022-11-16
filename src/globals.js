@@ -1,18 +1,20 @@
 const config = { initialized: false, company: {}, languageData: {} };
 
 const dt = {
-  INVOICE: 0,
-  PACKING: 1,
-  RETURN: 2,
-  RECEIPT: 3,
-  REFUND: 4,
+  QUOTE: 0,
+  INVOICE: 1,
+  PACKING: 2,
+  RETURN: 3,
+  RECEIPT: 4,
+  REFUND: 5,
 };
 
 const t = (key) => config.languageData[key];
 
-const showDate = (num) => {
-  if (!num) return "";
-  const date = new Date(num);
+const showDate = (value) => {
+  if (!value) return "";
+  if (typeof value === "string") return value;
+  const date = typeof value === "number" ? new Date(value) : value;
   return !config.locale
     ? date.toISOString().substring(0, 10)
     : date.toLocaleDateString(config.locale);
