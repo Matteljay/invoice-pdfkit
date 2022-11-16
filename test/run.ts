@@ -88,14 +88,14 @@ const repeatItems = Array(8).fill(items).flat();
 const order: Order = {
   id: "Y4TIX8GX",
   ref: "V1002",
-  purchase: "5846742",
+  //purchase: "5846742",
   date: {
     // JS Date format, milliseconds since 1 January 1970 UTC
     created: 1659372135311,
     expire: 1655558412147,
     due: 1655118412147,
     paid: 1655118412147,
-    deliver: "Full Moon xD",
+    //deliver: "Full Moon xD",
     refunded: 1655118412147,
   },
   clientID: "C345524U",
