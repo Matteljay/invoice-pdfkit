@@ -158,7 +158,7 @@ console.log("Language options: " + tradePDF.getLanguages());
 tradePDF.init({
   logo: fs.readFileSync("test/logo.jpg"),
   company: yourCompany,
-  language: "en",
+  language: "de",
   locale: "en-US",
   currency: "USD",
   page: { size: "A4" }, // This object is passed to pdfkit, see their documentation

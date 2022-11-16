@@ -58,7 +58,7 @@
 
   "terms": "Geschäftsbedingungen",
   "terms_site": "Vollständigen Geschäftsbedingungen sind beschrieben auf",
-  "term_expire": "Angebot ist bis einschließlich Ablaufdatum gültig.",
+  "terms_expire": "Angebot ist bis einschließlich Ablaufdatum gültig.",
   "terms_due": "Rechnung muss spätestens am Fälligkeitsdatum bezahlt werden.",
   "terms_paid": "Der angeforderte Betrag wurde bezahlt."
 }
