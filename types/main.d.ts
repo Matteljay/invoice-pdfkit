@@ -1,15 +1,3 @@
-type Settings = {
-  logo?: any;
-  company?: YourCompany;
-  language?: string;
-  locale?: string;
-  currency?: string;
-  page?: PDFDocumentOptions | undefined;
-  fontName?: string;
-  fontNameBold?: string;
-  fontSize?: number;
-};
-
 type Identity = {
   company?: string;
   name?: string;
@@ -34,6 +22,18 @@ type CompanyInfo = Identity & {
   terms?: string | string[];
   tagline?: string;
   ship?: Identity;
+};
+
+type Settings = {
+  logo?: any;
+  company?: CompanyInfo;
+  language?: string;
+  locale?: string;
+  currency?: string;
+  page?: PDFDocumentOptions | undefined;
+  fontName?: string;
+  fontNameBold?: string;
+  fontSize?: number;
 };
 
 type FlexDate = Date | number | string;
