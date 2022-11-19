@@ -47,6 +47,16 @@ type OrderDate = {
   refunded?: FlexDate;
 };
 
+type OrderItem = {
+  id?: string;
+  desc?: string;
+  qty?: string;
+  qtyShip?: string;
+  price?: string;
+  discount?: string;
+  tax?: string;
+};
+
 type OrderTotal = {
   discount?: number;
   vat?: number;
@@ -56,16 +66,6 @@ type OrderTotal = {
   exchangeTo?: string;
   exchangeRate?: number;
   exchangePrecision?: number;
-};
-
-type OrderItem = {
-  id?: string;
-  desc?: string;
-  qty?: string;
-  qtyShip?: string;
-  price?: string;
-  discount?: string;
-  tax?: string;
 };
 
 type Order = {
@@ -111,5 +111,3 @@ declare module "TradePDF" {
     refund,
   };
 }
-
-// EOF

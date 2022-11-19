@@ -26,6 +26,11 @@
     "type": "git",
     "url": "git+https://github.com/Matteljay/invoice-pdfkit.git"
   },
+  "files": [
+    "src",
+    "locals",
+    "types"
+  ],
   "keywords": [
     "business",
     "payment",
@@ -43,6 +48,12 @@
     "pdf",
     "document",
     "file"
+  ],
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/Matteljay/invoice-pdfkit/blob/main/CONTACT.md"
+    }
   ],
   "bugs": {
     "url": "https://github.com/Matteljay/invoice-pdfkit/issues"

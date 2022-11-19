@@ -91,13 +91,13 @@ If you clone this repo, `npm run tsstart` will regenerate the example files.
 - Common types of VAT and sales tax fields are supported.
 - Exchange rate specification for final payment in a different currency (such as bitcoin) is supported.
 - QR-code support for both legacy bank transfers and crypto payments, especially useful for the long address payload of bitcoin lightning network invoices.
-- The memo field is used for some cryptocurrencies, payment reference or a note is used for bank transfers.
 - Short-form human readable crypto addresses such as Ethereum's ENS can be specified in either the _company_ or _payment_ object at the same location as the bank account number or IBAN/SEPA number.
+- The memo field is used for some cryptocurrencies, payment reference or a note is used for bank transfers.
 - A list of all supported fields can be found in [types/main.d.ts](types/main.d.ts). TypeScript support is optional. Most of the fields are demonstrated by the example files.
 
 ## Donation
 
-This software is free as in transparent, open source and can be used per MIT license. Not free as in zero cost, 1000 lines of code didn't grow on a tree. Advertisements aren't integrated either. Buy the writer a coffee or whatever you consider reasonable if you decide to use it in the current or modified state. Further details in [CONTACT.md](CONTACT.md).
+This software is free as in transparent, open source and can be used per MIT license. Not free as in zero cost, 1000 lines of code didn't grow on a tree and no ads are integrated. Buy the writer a coffee or whatever you consider reasonable if you decide to use it in the current or modified state. Further details in [CONTACT.md](CONTACT.md).
 
 ## Translation
 
@@ -111,6 +111,6 @@ To add your language, go to the [locales/](locales/) folder and create a folder 
 
 ## Notes
 
-Some fields may be missing for your region. For example: most dutch entrepreneurs are forced to register a _KvK_ number. Simply add that text in the `company.registration` field: "KvK 0441.956.713". Australian banks may require a _BSB_ number for payments. Simply add that text to `payment.bankID` or `company.bankID`: "BSB 033-548". All supported fields can be found here: [types/main.d.ts](types/main.d.ts). If you still feel some essential fields are missing, a Git pull request is welcome.
+Some fields may be missing for your region. For example: most dutch entrepreneurs are forced to register a KvK number. Simply add that text in the `company.registration` field: "KvK 0441.956.713". Australian banks may require a BSB number for payments. Simply add that text to `payment.bankID` or `company.bankID`: "BSB 033-548". All supported fields can be found here: [types/main.d.ts](types/main.d.ts). If you still feel some essential fields are missing, a Git pull request is welcome.
 
 The source code includes a reasonably advanced flex-table implementation for pdfkit, see the module [src/flex-table.js](src/flex-table.js) this may be used in your own projects.
