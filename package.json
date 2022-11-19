@@ -28,7 +28,7 @@
   },
   "files": [
     "src",
-    "locals",
+    "locales",
     "types"
   ],
   "keywords": [
