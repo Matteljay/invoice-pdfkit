@@ -85,6 +85,7 @@ If you clone this repo, `npm run tsstart` will regenerate the example files.
 
 ## Features
 
+- Integration with the Node Package Manager: [invoice-pdfkit](https://www.npmjs.com/package/invoice-pdfkit)
 - Easy to translate for your language, see the [locales/](locales/) folder.
 - Can be used to declare working hours as well as a list of articles and their prices.
 - Total price is automatically calculated, factoring in several price inputs.
@@ -92,7 +93,6 @@ If you clone this repo, `npm run tsstart` will regenerate the example files.
 - Exchange rate specification for final payment in a different currency (such as bitcoin) is supported.
 - QR-code support for both legacy bank transfers and crypto payments, especially useful for the long address payload of bitcoin lightning network invoices.
 - Short-form human readable crypto addresses such as Ethereum's ENS can be specified in either the _company_ or _payment_ object at the same location as the bank account number or IBAN/SEPA number.
-- The memo field is used for some cryptocurrencies, payment reference or a note is used for bank transfers.
 - A list of all supported fields can be found in [types/main.d.ts](types/main.d.ts). TypeScript support is optional. Most of the fields are demonstrated by the example files.
 
 ## Donation
