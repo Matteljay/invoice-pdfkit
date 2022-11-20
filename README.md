@@ -23,7 +23,8 @@ _invoice-pdfkit_ attempts to standardize and internationalize the creation of co
 
 ## Example
 
-![Invoice example](screenshots/invoice-sample.png)
+![Invoice example page 1](screenshots/invoice1.jpg)
+![Invoice example page 2](screenshots/invoice2.jpg)
 
 Minimal code usage, install this module in your project folder:
 `npm i invoice-pdfkit`
@@ -32,18 +33,13 @@ Minimal code usage, install this module in your project folder:
 const tradePDF = require("invoice-pdfkit");
 const fs = require("fs");
 
-console.log("Language options: " + tradePDF.getLanguages());
-tradePDF.init({
-  logo: fs.existsSync("logo.jpg") ? fs.readFileSync("logo.jpg") : undefined,
-  company: {
-    company: "Your Company Name",
-    email: "your@buzz.com",
-    web: "https://that-buzz.org",
-  },
-  currency: "USD",
-});
+const myCompany = {
+  company: "Your Awesome Name",
+  email: "your@buzz.com",
+  web: "https://that-buzz.org",
+};
 
-const pdfData = tradePDF.invoice({
+const myOrder = {
   id: "S4TIX8GX",
   date: {
     created: 1659372135311,
@@ -75,7 +71,15 @@ const pdfData = tradePDF.invoice({
     fedTax: 5.1,
     ship: 7.24,
   },
+};
+
+console.log("Language options: " + tradePDF.getLanguages());
+tradePDF.init({
+  logo: fs.existsSync("logo.jpg") ? fs.readFileSync("logo.jpg") : undefined,
+  company: myCompany,
+  currency: "USD",
 });
+const pdfData = tradePDF.invoice(myOrder);
 fs.writeFileSync("simple.pdf", pdfData);
 console.log("Generated simple.pdf");
 ```
