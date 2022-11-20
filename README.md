@@ -23,8 +23,8 @@ _invoice-pdfkit_ attempts to standardize and internationalize the creation of co
 
 ## Example
 
-![Invoice example page 1](screenshots/invoice1.jpg)
-![Invoice example page 2](screenshots/invoice2.jpg)
+![Invoice example page 1](screenshots/invoice1.png)
+![Invoice example page 2](screenshots/invoice2.png)
 
 Minimal code usage, install this module in your project folder:
 `npm i invoice-pdfkit`
