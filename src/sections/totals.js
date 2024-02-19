@@ -51,7 +51,7 @@ const calcTotals = (doc, order, pricesData) => {
     table.push([t("total") + ":", showMoney(orderTotal)]);
   } else {
     const key = `${t("total")} (${sumQty} ${t("units")}):`;
-    table.push(key, showMoney(orderTotal));
+    table.push([key, showMoney(orderTotal)]);
   }
   if (exchangeTo && exchangeRate) {
     const key = `${t("exchange")} (${exchangeTo}):`;
