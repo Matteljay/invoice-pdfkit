@@ -6,7 +6,6 @@
 - Author: Matteljay
 - Language: JavaScript with TypeScript definitions
 - IDE: Visual Studio Code
-- Homepage: https://libersystems.com
 
 ## Table of contents
 
